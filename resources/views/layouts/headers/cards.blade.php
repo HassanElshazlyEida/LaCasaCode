@@ -1,6 +1,14 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
     <div class="container-fluid">
         <div class="header-body">
+        @if (session()->has('not_allow'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session()->get('not_allow') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
             <!-- Card stats -->
             <div class="row">
                 <div class="col-xl-4 col-lg-6">

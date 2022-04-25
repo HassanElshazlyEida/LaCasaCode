@@ -58,7 +58,20 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group{{ $errors->has('doctors') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Doctors') }}</label>
+                                    <select name="doctors" class="form-control" >
+                                        @foreach ($center->doctors as $doctor)
+                                             <option> {{$doctor->name}} </option>
+                                        @endforeach
 
+                                    </select>
+                                    @if ($errors->has('doctors'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('doctors') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
                         </form>
 

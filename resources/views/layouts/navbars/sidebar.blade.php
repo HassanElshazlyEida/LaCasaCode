@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('center.show',["user_id"=>Auth()->user()->id]) }}">
+                                <a class="nav-link" href="{{ route('center.show') }}">
                                     {{ __('User Center') }}
                                 </a>
                             </li>

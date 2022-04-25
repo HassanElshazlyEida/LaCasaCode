@@ -23,8 +23,8 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('center', 'App\Http\Controllers\Dashboard\CenterController@index')->name("center");
-    Route::get('center/show/{user_id}', 'App\Http\Controllers\Dashboard\CenterController@show')->name("center.show");
+    Route::get('center', 'App\Http\Controllers\Dashboard\CenterController@index')->name("center")->middleware('Admin');
+    Route::get('center/show', 'App\Http\Controllers\Dashboard\CenterController@show')->name("center.show");
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
