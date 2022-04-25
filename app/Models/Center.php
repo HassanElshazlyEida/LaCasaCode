@@ -15,4 +15,10 @@ class Center extends Model
         "contacts",
         "user_id"
     ];
+    public function user(){
+        return $this->belongsTo(User::class,"user_id");
+    }
+    public function doctors(){
+        return $this->belongsToMany(Doctor::class,"doctor_center");
+    }
 }
